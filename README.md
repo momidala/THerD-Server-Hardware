@@ -15,10 +15,10 @@ THerD-Server handles:
 
 ## Documentation
 
-- **[Hardware Requirements](HARDWARE_REQUIREMENTS.md)** - Platform specifications, supported hardware, capacity planning
-- **[Deployment Guide](DEPLOYMENT.md)** *(coming soon)* - Step-by-step deployment instructions
-- **[Configuration Reference](CONFIGURATION.md)** *(coming soon)* - Server configuration options
-- **[Installation Guide](INSTALLATION.md)** *(coming soon)* - Installation procedures for different platforms
+- **[Hardware Requirements](docs/HARDWARE_REQUIREMENTS.md)** - Platform specifications, supported hardware, capacity planning
+- **[RTK Setup Guide](docs/RTK_SETUP.md)** *(coming soon)* - GPS base station configuration
+- **[Deployment Guide](docs/DEPLOYMENT.md)** *(coming soon)* - Step-by-step deployment instructions
+- **[Configuration Templates](config/)** *(coming soon)* - Server configuration examples
 
 ## Quick Start
 
@@ -44,11 +44,16 @@ THerD-Server handles:
 
 ```
 THerD-Server-Hardware/
-├── README.md                    # This file
-├── HARDWARE_REQUIREMENTS.md     # Platform specifications
-├── DEPLOYMENT.md                # Deployment procedures (planned)
-├── CONFIGURATION.md             # Configuration reference (planned)
-└── INSTALLATION.md              # Installation guide (planned)
+├── README.md                         # This file
+├── docs/
+│   ├── HARDWARE_REQUIREMENTS.md     # Platform specifications
+│   ├── RTK_SETUP.md                 # GPS base station setup (planned)
+│   └── DEPLOYMENT.md                 # Deployment guide (planned)
+├── config/
+│   ├── server.toml.example          # Configuration template (planned)
+│   └── therd-server.service         # Systemd service file (planned)
+└── scripts/
+    └── test-gps.sh                   # GPS verification script (planned)
 ```
 
 ## Related Repositories
