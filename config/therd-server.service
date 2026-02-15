@@ -1,0 +1,29 @@
+[Unit]
+Description=THerD AR Platform Server
+After=network.target
+
+[Service]
+Type=simple
+User=therd
+Group=therd
+WorkingDirectory=/var/lib/therd
+ExecStart=/usr/local/bin/therd-server --config /etc/therd/server.toml
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=therd-server
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/therd
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

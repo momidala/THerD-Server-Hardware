@@ -1,0 +1,42 @@
+# THerD-Server Configuration
+# Copy to /etc/therd/server.toml and customize
+
+[http]
+# HTTP server binding
+bind_address = "0.0.0.0"  # 0.0.0.0 = all interfaces, 127.0.0.1 = localhost only
+port = 8080
+
+[websocket]
+# WebSocket server binding
+bind_address = "0.0.0.0"
+port = 8081
+
+# Maximum simultaneous client connections
+max_clients = 100
+
+[data]
+# Data storage directories
+worlds_dir = "/var/lib/therd/worlds"
+bytecode_dir = "/var/lib/therd/bytecode"
+
+[base_station]
+# RTK GPS base station (optional)
+enabled = true
+device = "/dev/ttyUSB0"  # Serial device path
+baud_rate = 115200
+
+[world]
+# World package limits
+max_package_size_mb = 50
+max_script_size_kb = 512
+max_assets = 100
+
+[state]
+# State synchronization
+broadcast_rate_hz = 20
+snapshot_interval_ticks = 20  # Full snapshot every N ticks
+persist_state = false  # Reset state when last player leaves
+
+[logging]
+# Log level: trace, debug, info, warn, error
+level = "info"
